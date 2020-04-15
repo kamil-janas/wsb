@@ -1,0 +1,278 @@
+body{
+  background-color: #f5f5f5;
+  color: #0f0f0f;
+  padding: 0;
+  margin: 0;
+}
+
+/*FONTS USED*/
+body{
+  font-family: 'Muli', sans-serif;
+}
+p{
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+font-family: "FancyFont";
+src: url("fonts/MADE Coachella Bold");
+src: url("fonts/MADE Coachella Bold.otf") format("opentype");
+}
+/*KOLORY#:
+#d3574e - czerwony
+#f5f5f5 - szary tło
+#0f0f0f - czarny text
+*/
+
+.item-a {
+  grid-area: header;
+}
+.item-b {
+  grid-area: main;
+}
+.item-c {
+  grid-area: footer;
+}
+
+.container {
+  display: grid;
+
+  grid-template-columns: minmax(120px, 360px) auto minmax(120px, 200px); /*3 kol*/
+  grid-template-rows: 89px minmax(700px, auto) minmax(30px, 50px); /*89px nabvar, auto , 50px black bar bottom*/
+
+  grid-gap: 0;
+  padding: 0;
+
+  grid-template-areas:
+  "header header header"
+  ". main ."
+  "footer footer footer";
+
+  justify-items: stretch;
+}
+/*.grid-container > div     do wszystkich grid-items albo po nazwie klasy*/
+
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/*          NAVBAR ELEMENTS            */
+
+.guest-login button:hover{
+  background-color:  #a22a13;
+}
+.guest-button{
+  border: none;
+  width: 100%;
+  height: 89px;
+  text-decoration: none;
+  font-family: 'Muli', sans-serif;
+  background-color: #d3574e;
+  color: #f5f5f5;
+  font-size: 18pt;
+  letter-spacing: -1pt;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+.guest-login img{
+  padding-right: 34px;
+}
+.logo{
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.guest-login{
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+
+  /*justify-self: end;*/
+}
+.login-button:hover{
+  background-color: #a22a13;
+}
+.Navbar_logo {
+  padding: 10px;
+}
+.logo{
+/*  grid-area: header;  przypisanie danego diva do danej strefy w gridzie (header main footer)*/
+  align-self: center;
+  justify-self: center;
+}
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/*          SMALL CONTAINER ELEMENTS            */
+.small-container{
+grid-column-start: 2;
+grid-column-end: 3;
+grid-row-start: 2;
+height: calc(100vh - 138px);
+}
+.small-container{
+  display: grid;
+
+  grid-template-columns: auto auto; /*2 kol auto rozmieszczone/ auto-size*/
+  grid-template-rows: 100%; /*89px nabvar, auto , 50px black bar bottom*/
+
+  grid-gap: 0;
+  padding: 0;
+}
+.small-container-left{
+/*logowanie 30-50% kontenera*/
+grid-column-start: 1;
+grid-column-end: 2;
+grid-row-start: 1;
+}
+.counter{
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.small-container-left p {
+  cursor: default;
+}
+.small-container-right{
+/*ilustracja laptopów+tekst z-1*/
+grid-column-start: 2;
+grid-column-end: 3;
+grid-row-start: 1;
+
+z-index: -1;
+margin: 10vh 0px;
+margin-right: 0px;
+}
+.Fancy-font{
+  font-family: 'FancyFont';
+  margin: 0;
+  padding: 0;
+}
+.Size100{
+  /*font-size: 100pt;*/
+  /*font-size: 100pt; dziala dla stalej rozdzielczosci, nie pod rwd*/
+  font-size: calc(13vh); /*zmniejsza wielkosc czcionki w zaleznosci od view-high (danego okna)*/
+  font-weight: 600;
+  padding-top: calc(100vh - 90vh);
+}
+.Size20{
+  font-size: 20pt;
+  font-size: calc(3vh);
+  letter-spacing: 1pt;
+}
+/*horizontal line before/after method*/
+.Size20:before{
+  content: "";
+  display: inline-block;
+  height: 1px;
+  background-color: #0f0f0f;
+  position: relative;
+  vertical-align: middle;
+  transform: translate(-1vw);
+  margin-right: 1vw;
+  width: 130px;
+}
+
+/*!!!!!! LOGIN BOX !!!!!!!!*/
+
+.loginbox{
+  margin-top: 80px;
+  width: 380px;
+  box-sizing: border-box;
+}
+.loginbox form{
+}
+.loginbox input{
+
+  width: 370px;
+  margin-bottom: 20px;
+  background-color: transparent;
+  outline: none;
+}
+.loginbox input[type="text"], input[type="password"]{
+  border: none;
+  border-bottom: 1px solid #0f0f0f;
+  padding: 14px 0 ;
+  color: #d3574e;
+  font-size: 16pt;
+  font-weight: 400;
+}
+.loginbox input[type="submit"]{
+  margin: 6vh 0;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  height: 60px;
+  width: 180px;
+  color: #f5f5f5;
+  background-color: #d3574e;
+  font-weight: 400;
+  font-size: 22pt;
+}
+.loginbox input::placeholder {
+  color: rgba(0,0,0,.4);
+  opacity: 1;
+}
+.loginbox a {
+  line-height: 20px;
+  color: #0f0f0f;
+  font-family: 'Muli', sans-serif;
+  font-weight: 400;
+  font-size: 11pt;
+  letter-spacing: -.3pt;
+  text-decoration: none;
+}
+.loginbox a:first-of-type{
+  margin-right: 20px; /*tylko 1 link ma odstep*/
+}
+.loginbox input[type="submit"]:hover{
+  background-color: #a22a13;
+  cursor: pointer;
+}
+
+
+/*!!!!!!!!!!!!!!!!!!  90deg rotated text !!!!!!!!!!!!!!!!!!!!*/
+.counter{
+  z-index: -15;
+}
+.rotate{
+  margin-right: 135px;
+  margin-top: 140px;
+  transform: rotate(90deg);
+}
+.number01{
+font-size: 22pt;
+font-weight: thin;
+}
+.number01logowanie{
+letter-spacing: 1px;
+}
+.number01logowanie::after{
+  content: "";
+  display: inline-block;
+  height: 1px;
+  background-color: rgba(0,0,0,.4);
+  position: relative;
+  vertical-align: middle;
+  transform: translate(1px);
+  margin-right: 1vw;
+  width: 130px;
+}
+
+.footer{
+  text-align: center;
+  width: 100%;
+  z-index: 1;
+  margin-top: 20px;
+  grid-area: footer;
+  background-color: #1a1a1a;
+}
+.footer a{
+  display: inline-block;
+
+  z-index: 1;
+  text-decoration: none;
+  color: darkgrey;
+  margin: 0 60px;
+}
